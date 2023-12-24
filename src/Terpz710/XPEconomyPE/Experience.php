@@ -1,6 +1,6 @@
 <?php
 
-namespace Terpz710\XPEconomy;
+namespace Terpz710\XPEconomyPE;
 
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
@@ -9,7 +9,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\plugin\PluginBase;
 
-use Terpz710\XPEconomy\Command\XPCommand;
+use Terpz710\XPEconomyPE\Command\XPCommand;
 
 class Experience extends PluginBase implements Listener {
 
