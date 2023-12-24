@@ -87,7 +87,7 @@ class XPCommand extends Command {
         $targetPlayerName = array_shift($args);
         $exp = $this->plugin->getPlayerExp($targetPlayerName);
         
-        if ($exp === null) {
+        if ($exp == null) {
             $sender->sendMessage("Player not found or has no EXP.");
         } else {
             $sender->sendMessage("{$targetPlayerName}'s EXP balance: " . $exp);
