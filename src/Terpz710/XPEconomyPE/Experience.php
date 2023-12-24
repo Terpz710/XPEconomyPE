@@ -140,4 +140,47 @@ class Experience extends PluginBase implements Listener {
 
     return $topPlayers;
     }
+
+    public function payExp(Player $sender, string $targetPlayerName, int $amount): bool {
+    $senderName = $this->getPlayerName($sender);
+
+    if (!$this->existPlayer($targetPlayerName)) {
+        return false;
+    }
+
+    $senderExp = $this->getPlayerExp($senderName);
+
+    if ($senderExp < $amount) {
+        return false;
+    }
+
+    $targetExp = $this->getPlayerExp($targetPlayerName);
+
+    $this->removeExp($senderName, $amount);
+    $this->addExp($targetPlayerName, $amount);
+
+    return true;
+}
+
+public function setPlayerExp(string $playerName, int $level): bool {
+    if (!$this->existPlayer($playerName)) {
+        return false;
+    }
+
+    $this->setExp($playerName, $this->calculateExpFromLevel($level));
+
+    return true;
+    }
+
+    public function checkExp(Player $player): void {
+    $playerName = $this->getPlayerName($player);
+
+    if ($this->existPlayer($playerName)) {
+        $exp = $this->getPlayerExp($playerName);
+        $player->sendMessage("Your EXP balance: " . $exp);
+    } else {
+        $this->createPlayer($playerName);
+        $player->sendMessage("Created a new profile for you!");
+        }
+    }
 }
