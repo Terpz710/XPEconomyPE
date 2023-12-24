@@ -2,6 +2,7 @@
 
 namespace Terpz710\XPEconomyPE\Command;
 
+use pocketmine\Server;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
