@@ -42,7 +42,7 @@ class XPCommand extends Command {
                 break;
 
             case "myxp":
-                $this->checkExp($sender);
+                $this->plugin->checkExp($sender);
                 break;
 
             case "topxp":
