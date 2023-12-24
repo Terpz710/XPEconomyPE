@@ -1,0 +1,11 @@
+name: XPEconomyPE
+version: 1.0.0
+main: Terpz710
+api: 5.0.0
+main: Terpz710\XPEconomyPE\Experience
+description: Utilizes XP as Economy.
+
+permissions:
+  xpeconomype.cmd:
+    description: Allows the user to use the command.
+    default: true
