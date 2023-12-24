@@ -90,11 +90,11 @@ class Experience extends PluginBase implements Listener {
     }
 
     public function setPlayerExpLevel(Player $player, int $level): void {
-        $this->getServer()->getXpManager()->setXpAndProgress($this->calculateExpFromLevel($level));
+        $this->getXpManager()->setXpAndProgress($this->calculateExpFromLevel($level));
     }
 
     public function getPlayerExpLevel(Player $player): int {
-        return $this->calculateLevelFromExp($this->getServer()->getXpManager()->getCurrentTotalXp());
+        return $this->calculateLevelFromExp($this->getXpManager()->getCurrentTotalXp());
     }
 
     private function calculateExpFromLevel(int $level): float {
