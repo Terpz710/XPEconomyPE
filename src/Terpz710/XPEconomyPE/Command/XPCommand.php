@@ -188,6 +188,7 @@ class XPCommand extends Command {
             return;
         }
 
+        $targetPlayerName = $this->getServer()->getPlayerByPrefix($targetPlayerName);
         $success = $this->plugin->addExp($targetPlayerName, $amount);
 
         if ($success) {
