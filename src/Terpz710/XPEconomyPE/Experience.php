@@ -8,6 +8,9 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\plugin\PluginBase;
+use pocketmine\entity\Attribute;
+use pocketmine\entity\AttributeFactory;
+use pocketmine\entity\ExperienceManager;
 
 use Terpz710\XPEconomyPE\Command\XPCommand;
 
@@ -86,11 +89,11 @@ class Experience extends PluginBase implements Listener {
     }
 
     public function setPlayerExpLevel(Player $player, int $level): void {
-        $player->setExperience($this->calculateExpFromLevel($level));
+        $this->getExperienceManager()->setXpAndProgress($this->calculateExpFromLevel($level));
     }
 
     public function getPlayerExpLevel(Player $player): int {
-        return $this->calculateLevelFromExp($player->getExperience());
+        return $this->calculateLevelFromExp($this->getExperienceManager()->getCurrentTotalXp());
     }
 
     private function calculateExpFromLevel(int $level): float {
