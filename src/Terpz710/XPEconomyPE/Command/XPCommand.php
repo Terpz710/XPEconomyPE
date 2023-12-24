@@ -1,12 +1,12 @@
 <?php
 
-namespace Terpz710\XPEconomy\Command;
+namespace Terpz710\XPEconomyPE\Command;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 
-use Terpz710\XPEconomy\Experience;
+use Terpz710\XPEconomyPE\Experience;
 
 class XPCommand extends Command {
 
