@@ -15,6 +15,7 @@ class XPCommand extends Command {
 
     public function __construct(Experience $plugin) {
         parent::__construct("exp", "XP Economy command", "/exp [see|pay|myxp|topxp|removexp|setxp|addxp]", ["xp"]);
+        $this->setPermission("xpeconomype.cmd");
 
         $this->plugin = $plugin;
     }
