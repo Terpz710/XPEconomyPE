@@ -8,7 +8,7 @@ use pocketmine\player\Player;
 
 use Terpz710\XPEconomy\Experience;
 
-class ExpCommand extends Command {
+class XPCommand extends Command {
 
     /** @var Experience */
     private $plugin;
