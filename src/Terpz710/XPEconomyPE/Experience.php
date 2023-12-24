@@ -2,6 +2,7 @@
 
 namespace Terpz710\XPEconomyPE;
 
+use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
@@ -89,11 +90,11 @@ class Experience extends PluginBase implements Listener {
     }
 
     public function setPlayerExpLevel(Player $player, int $level): void {
-        $this->getExperienceManager()->setXpAndProgress($this->calculateExpFromLevel($level));
+        $this->getServer()->getExperienceManager()->setXpAndProgress($this->calculateExpFromLevel($level));
     }
 
     public function getPlayerExpLevel(Player $player): int {
-        return $this->calculateLevelFromExp($this->getExperienceManager()->getCurrentTotalXp());
+        return $this->calculateLevelFromExp($this->getServer()->getExperienceManager()->getCurrentTotalXp());
     }
 
     private function calculateExpFromLevel(int $level): float {
