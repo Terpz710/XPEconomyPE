@@ -1,6 +1,6 @@
 <?php
 
-namespace Terpz710\XPEconomy\command;
+namespace Terpz710\XPEconomy\Command;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
