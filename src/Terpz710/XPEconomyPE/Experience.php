@@ -136,4 +136,4 @@ class Experience extends PluginBase implements Listener {
 
     return $topPlayers;
     }
-}// fuck niggas
+}
