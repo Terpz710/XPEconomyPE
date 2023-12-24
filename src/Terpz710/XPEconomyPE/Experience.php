@@ -21,7 +21,7 @@ class Experience extends PluginBase implements Listener {
 
         $this->playerData = new Config($this->getDataFolder() . "playerData.json", Config::JSON);
         
-        $this->getServer()->getCommandMap()->register("exp", new ExpCommand($this));
+        $this->getServer()->getCommandMap()->register("exp", new XPCommand($this));
     }
 
     public function onDisable(): void {
